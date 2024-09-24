@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+:root {
+  /* ffeb99 */
+  --accent: #ffeb99;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  /* font-family: Arial, sans-serif; */
+  font-family: "Nunito Sans", sans-serif;
+  background-image: url('./images/BackgroundImage.jpg');
+  background-size: cover;
+}
+
+.main-content {
+  width: 80%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.prediction-card {
+  background-color: rgb(255,235,153,0.3);
+  display: flex;
+  width: 70%;
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.crop-form,
+.prediction-panel {
+  min-height: 00px;
+  flex: 0 0 50%;
+  box-sizing: border-box;
+  /* padding: 10px; */
+  max-height: 400px;
 }

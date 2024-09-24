@@ -1,0 +1,31 @@
+.history-panel {
+    width: 20%;
+    background-color: var(--accent);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 20px 0px 20px 20px;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+.history-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 16px;
+}
+
+.history-table th {
+    background-color: #f2f2f2; 
+} 
+
+.history-table hr {
+    border: none;
+    border-top: 1px solid black; 
+}
+
+strong{
+    font-weight: 600;
+}

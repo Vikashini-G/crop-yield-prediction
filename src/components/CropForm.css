@@ -1,0 +1,52 @@
+.crop-form {
+    /* max-width: 50%; */
+    /* width: 100%; */
+    background-color: var(--accent);
+    border-radius: 10px;
+    display: block;
+    padding: 20px;
+    margin-right: 5px;
+    /* height: 100%; */
+}
+
+.crop-form p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.crop-form label {
+    /* display: block; */
+    /* margin-bottom: 10px; */
+    font-size: 16px;
+}
+
+.crop-form input {
+    box-sizing: border-box;
+    background-color: var(--accent);
+    width: 100%;
+    display: block;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.crop-form button {
+    display: block;   
+    margin: auto;
+    width: 90%;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.crop-form button:hover {
+    background-color: #333;
+}
