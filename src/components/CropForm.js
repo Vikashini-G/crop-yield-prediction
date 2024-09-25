@@ -15,17 +15,32 @@ const CropForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const cropData = {
+            State_Name: stateName,
+            Crop_Type: cropType,
+            Crop: crop,
+            rainfall: parseFloat(rainfall),
+            temperature: parseFloat(temperature),
+            Area_in_hectares: parseFloat(areaInHectares),
+        };
+
+        console.log('Sending data to backend:', cropData); 
+
         try {
             // Save to Firestore (optional)
             await addDoc(collection(db, "crops"), {
-                State_Name: stateName,
-                Crop_Type: cropType,
-                Crop: crop,
-                rainfall: rainfall,
-                temperature: temperature,
-                Area_in_hectares: areaInHectares,
-                timestamp: new Date()
+                ...cropData,
+                timestamp: new Date(),
             });
+            // await addDoc(collection(db, "crops"), {
+            //     State_Name: stateName,
+            //     Crop_Type: cropType,
+            //     Crop: crop,
+            //     rainfall: rainfall,
+            //     temperature: temperature,
+            //     Area_in_hectares: areaInHectares,
+            //     timestamp: new Date()
+            // });
 
             console.log('Crop data added to Firestore');
 
@@ -35,14 +50,7 @@ const CropForm = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    State_Name: stateName,
-                    Crop_Type: cropType,
-                    Crop: crop,
-                    rainfall: parseFloat(rainfall),
-                    temperature: parseFloat(temperature),
-                    Area_in_hectares: parseFloat(areaInHectares),
-                }),
+                body: JSON.stringify(cropData),
             });
 
             const data = await response.json();
