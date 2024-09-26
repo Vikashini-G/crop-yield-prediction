@@ -19,9 +19,20 @@ expected_columns = [
 ]
 # Load your trained model
 model_xgb = pickle.load(open('xgb.pkl', 'rb'))
-
+ytr= pd.read_csv('model/Final_Dataset_after_temperature.csv')
+X=ytr.drop(["Yield_ton_per_hec", "Production_in_tons"],axis=1)
+X_encoded=pd.get_dummies(X)
 @app.route('/predict', methods=['POST'])
+# def pred(model_xgb,input_data):
+#     custom_input_df = pd.DataFrame([input_data])
+#     custom_input_encoded = pd.get_dummies(custom_input_df)
 
+# # # Align the custom input with the training set to ensure it has the same columns
+#     custom_input_encoded = custom_input_encoded.reindex(columns=X_encoded.columns, fill_value=0)
+#     custom_dmatrix = xgb.DMatrix(custom_input_encoded)
+#     y_pred_custom = model_xgb.predict(custom_dmatrix)
+#     #print(f'Predicted Production in tons: {y_pred_custom[0]}')
+    # return y_pred_custom[0]
 def predict():
     # Get the JSON data from the request
     data = request.get_json()
@@ -35,9 +46,15 @@ def predict():
         'temperature': float(data['temperature']),
         'Area_in_hectares': float(data['Area_in_hectares'])
     }
+    custom_input_df = pd.DataFrame([custom_input])
+    custom_input_encoded = pd.get_dummies(custom_input_df)
 
+# # Align the custom input with the training set to ensure it has the same columns
+    custom_input_encoded = custom_input_encoded.reindex(columns=X_encoded.columns, fill_value=0)
+    custom_dmatrix = xgb.DMatrix(custom_input_encoded)
+    y_pred_custom = model_xgb.predict(custom_dmatrix)
     # Call the pred() function to get the prediction
-    prediction = pred(model_xgb, custom_input)
+    prediction = float(y_pred_custom) #pred(model_xgb, custom_input)
 
     # Return the prediction as JSON
     return jsonify({'prediction': prediction})
