@@ -27,7 +27,7 @@
     width: 100%;
     display: block;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 2px;
     margin-bottom: 15px;
     border-radius: 4px;
     border: 1px solid black;
@@ -37,9 +37,9 @@
     display: block;   
     margin: auto;
     width: 90%;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 15px 30px;
-    background-color: black;
+    background-color: var(--darkAccent);
     color: white;
     border: none;
     border-radius: 50px;
@@ -49,4 +49,13 @@
 
 .crop-form button:hover {
     background-color: #333;
+}
+
+.crop-details{
+    padding-bottom: 25px;
+}
+
+h4{
+    color:rgba(0, 0, 0, 0.60);
+    /* color: #2d5502; */
 }

@@ -1,13 +1,7 @@
 .PredictionPanel{
     width: 100%;
-    color: white;
     border-radius: 10px;
     display: block;
     padding: 20px;
     margin-left: 5px;
-}
-h2{
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 500;
 }

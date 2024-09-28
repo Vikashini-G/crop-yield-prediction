@@ -32,19 +32,38 @@ const HistoryPanel = () => {
                         history.map((item) => (
                             <React.Fragment key={item.id}>
                                 <tr>
-                                    <td><strong>Crop Type</strong></td>
-                                    <td>{item.cropType}</td>
+                                    <td><strong>State name</strong></td>
+                                    <td>{item.State_Name}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Region</strong></td>
-                                    <td>{item.region}</td>
+                                    <td><strong>Crop type</strong></td>
+                                    <td>{item.Crop_Type}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Season</strong></td>
-                                    <td>{item.season}</td>
+                                    <td id="bolder">Crop</td>
+                                    <td id="bolder">{item.Crop}</td>
+                                </tr>
+                                
+                                <tr style={{ height: '10px' }}/>
+
+                                <tr>
+                                    <td><strong>Rainfall</strong></td>
+                                    <td>{parseFloat(item.rainfall).toFixed(2)}</td>
                                 </tr>
                                 <tr>
-                                    <td colSpan="2"><hr /></td>
+                                    <td><strong>Temperature</strong></td>
+                                    <td>{parseFloat(item.temperature).toFixed(2)}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Area (ha)</strong></td>
+                                    <td>{parseFloat(item.Area_in_hectares).toFixed(2)}</td>
+                                </tr>
+                                <tr>
+                                    <td id="bolder">Prediction</td>
+                                    <td id="bolder">{parseFloat(item.prediction).toFixed(2)} tons</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2"><hr style={{borderTop: '1px solid #2d5502', opacity: 0.5}}/></td>
                                 </tr>
                             </React.Fragment>
                         ))
@@ -53,7 +72,6 @@ const HistoryPanel = () => {
                     )}
                 </tbody>
             </table>
-
         </div>
     );
 };

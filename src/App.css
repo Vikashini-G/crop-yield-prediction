@@ -1,6 +1,9 @@
 :root {
   /* ffeb99 */
-  --accent: #ffeb99;
+  /* daeba8 */
+  /* cedca5 */
+  --accent: #cedca5;
+  --darkAccent: #2d5502;
 }
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
@@ -16,7 +19,8 @@ body {
   height: 100vh;
   /* font-family: Arial, sans-serif; */
   font-family: "Nunito Sans", sans-serif;
-  background-image: url('./images/BackgroundImage.jpg');
+  /* background-image: url('./images/BackgroundImage.jpg'); */
+  background-image: url('./images/bg4.jpg');
   background-size: cover;
 }
 
@@ -28,19 +32,32 @@ body {
 }
 
 .prediction-card {
-  background-color: rgb(255,235,153,0.3);
+  background-color: rgb(218, 235, 168,0.5);
   display: flex;
   width: 70%;
   padding: 10px;
-  border: 1px solid var(--accent);
+  border: 1px solid #cedca5;
   border-radius: 20px;
 }
 
-.crop-form,
 .prediction-panel {
-  min-height: 00px;
   flex: 0 0 50%;
   box-sizing: border-box;
-  /* padding: 10px; */
-  max-height: 400px;
+}
+
+.crop-form{
+  min-height: 100px; 
+  flex: 0 0 50%;
+  box-sizing: border-box;
+  overflow-y: auto; 
+  padding: 20px; 
+  margin: 0 auto; 
+  border-radius: 8px; 
+}
+
+h2{
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
 }
