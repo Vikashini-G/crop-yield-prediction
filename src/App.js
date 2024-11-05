@@ -11,15 +11,20 @@ function App() {
 
     return (
         <div className="app">
-            <TranslateComponent/>
-            <HistoryPanel />
-            <div className="main-content">
-                <div className="prediction-card">
-                    <CropForm setPrediction={setPrediction} />
-                    <PredictionPanel prediction={prediction} />
-                </div>
+            <div className='translate'>
+                <TranslateComponent/>
             </div>
-            <Chatbot />
+            <div className='rest'>
+                <HistoryPanel />
+                <div className="main-content">
+                    <div className="prediction-card">
+                        <CropForm setPrediction={setPrediction} />
+                        <PredictionPanel prediction={prediction} />
+                    </div>
+                </div>
+                <Chatbot />
+            </div>
+            
         </div>
     );
 }
